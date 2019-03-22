@@ -27,9 +27,8 @@ class SettingsViewController: UITableViewController, Themeable {
     }
 
     @objc private func toggleDarkMode(_ sender: UISwitch) {
-        let center = sender.superview?.convert(sender.center, to: nil) ?? .zero
-
         // Circular
+        let center = sender.superview?.convert(sender.center, to: nil) ?? .zero
         CircularReveal.animate(from: center) { _ in
             self.setNeedsStatusBarAppearanceUpdate()
         }
